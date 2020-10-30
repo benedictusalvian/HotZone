@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from environs import Env
 from pathlib import Path
 
+env = Env()
+env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -119,6 +122,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
-
-env = Env()
-env.read_env()
