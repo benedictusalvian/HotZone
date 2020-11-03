@@ -49,7 +49,8 @@ const columns = [
 ];
 
   const { Search } = Input;
-  const databaseURL = "postgres://pubnpubtfrtumg:422577b28efc2606051d7a6eaefbad47110bbe895bf56058d8a9d7ba1c57cf49@ec2-54-156-53-71.compute-1.amazonaws.com:5432/d5gbk39fjhmcbc";
+  // const databaseURL = "postgres://pubnpubtfrtumg:422577b28efc2606051d7a6eaefbad47110bbe895bf56058d8a9d7ba1c57cf49@ec2-54-156-53-71.compute-1.amazonaws.com:5432/d5gbk39fjhmcbc";
+  const databaseURL = "http://localhost:8000"
 
   
 class SiderDemo extends React.Component {
@@ -104,7 +105,7 @@ class SiderDemo extends React.Component {
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           <div className="logo">
-              <Title style={{ color: 'white'}} level={2}>HotZone 🔥</Title>
+              <Title style={{ color: 'white'}} level={2} ellipsis={true}>HotZone 🔥</Title>
           </div>
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1" icon={<FullscreenExitOutlined />}>
@@ -138,7 +139,8 @@ class SiderDemo extends React.Component {
             <Table columns={columns} dataSource={data}/>
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED<br/>
+          HotZone 🔥 by Benedictus Alvian Sofjan</Footer>
         </Layout>
       </Layout>
     );
