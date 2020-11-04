@@ -8,3 +8,7 @@ from .models import HotzoneBackend
 class HotzoneBackendView(viewsets.ModelViewSet):
     serializer_class = HotzoneBackendSerializer
     queryset = HotzoneBackend.objects.all()
+
+
+def index(request):
+    return render(request, "index.html")
