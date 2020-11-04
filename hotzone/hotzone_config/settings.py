@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = env('HOTZONE_SECRET_KEY')
-SECRET_KEY = 'Ben is awesome!'
+SECRET_KEY = env('HOTZONE_SECRET_KEY')
+# SECRET_KEY = 'Ben is awesome!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,19 +86,19 @@ WSGI_APPLICATION = 'hotzone_config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': env.dj_db_url('DATABASE_URL')
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hotzone',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': env.dj_db_url('DATABASE_URL')
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'hotzone',
+#         'USER': 'admin',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
