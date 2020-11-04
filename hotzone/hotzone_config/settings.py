@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from environs import Env
 from pathlib import Path
+import os
+import django_heroku
 
 env = Env()
 env.read_env()
@@ -37,6 +39,7 @@ ALLOWED_HOSTS = ['floating-taiga-48014.herokuapp.com',
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,7 +68,7 @@ ROOT_URLCONF = 'hotzone_config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

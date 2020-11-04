@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from hotzone_backend import views
+from django.views.generic import TemplateView
 
 router = routers.DefaultRouter()
 router.register(r'locations', views.HotzoneBackendView, 'hotzone_backend')
 
 urlpatterns = [
+    # path('', index, name='index'),
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
 ]
