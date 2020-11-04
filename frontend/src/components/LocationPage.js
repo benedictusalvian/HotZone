@@ -49,8 +49,7 @@ const columns = [
 ];
 
   const { Search } = Input;
-  // const databaseURL = "postgres://pubnpubtfrtumg:422577b28efc2606051d7a6eaefbad47110bbe895bf56058d8a9d7ba1c57cf49@ec2-54-156-53-71.compute-1.amazonaws.com:5432/d5gbk39fjhmcbc";
-  const databaseURL = "http://localhost:8000"
+  const appURL = "https://floating-taiga-48014.herokuapp.com"
 
   
 class SiderDemo extends React.Component {
@@ -82,7 +81,7 @@ class SiderDemo extends React.Component {
       coordinateY: data.y,
       address: data.addressEN,
     });
-    fetch(`${databaseURL}/api/locations/`, {
+    fetch(`${appURL}/api/locations/`, {
       method: 'POST', // or 'PUT
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +94,7 @@ class SiderDemo extends React.Component {
 
   refreshTable = () => {
     axios
-    .get(`${databaseURL}/api/locations/`)
+    .get(`${appURL}/api/locations/`)
     .then(response => this.setState({ data: response.data }))
   }
 
