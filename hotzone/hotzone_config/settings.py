@@ -32,7 +32,7 @@ SECRET_KEY = env('HOTZONE_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['floating-taiga-48014.herokuapp.com',
-                 'localhost', '127.0.0.1']
+                 'localhost', '127.0.0.1', 'desktop-4as6ro8']
 
 
 # Application definition

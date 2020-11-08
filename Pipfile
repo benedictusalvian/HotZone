@@ -15,6 +15,7 @@ environs = {extras = ["django"], version = "*"}
 djangorestframework = "*"
 django-cors-headers = "*"
 django-heroku = "*"
+waitress = "*"
 
 [requires]
 python_version = "3.8"
